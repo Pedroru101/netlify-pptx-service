@@ -8,6 +8,11 @@ app.use(express.json({ limit: '10mb' })); // Aumentamos el límite por si los da
 
 const router = express.Router();
 
+// Handler para solicitudes GET en la raíz del function
+router.get('/', (req, res) => {
+  res.status(200).json({ message: 'Envía un POST a esta ruta con datosReporte y chartList para generar PPTX.' });
+});
+
 // Definimos la ruta DENTRO del router de Express
 router.post('/', async (req, res) => {
   try {
